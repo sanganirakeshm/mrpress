@@ -1,0 +1,40 @@
+{% extends "LdAdminBundle::layout.html.twig" %}
+
+{% block body %}
+
+<div class="content-area p-y-1">
+	<div class="container-fluid">
+		<h4>Customer</h4>
+		<ol class="breadcrumb no-bg m-b-1">
+			<li class="breadcrumb-item"><a href="#">User Management</a></li>			
+			<li class="breadcrumb-item active">Add New Customer</li>
+		</ol>
+		<div class="m-b-0-25" id="alermeg">
+			{% include "LdAdminBundle::flashMessage.html.twig" %}
+		</div>
+		<div class="box box-block bg-white">
+			<h5>Add New</h5>
+			
+			<form action="{{ path('ld_admin_customer_add') }}" method="POST" {{ form_enctype(form) }} class="form-horizontal" id="add_cust_form">
+			{% include 'LdAdminBundle:Customer:_cust_form.html.twig' with {'form': form} %}
+			<div class="form-group row">
+				<div class="offset-sm-5 col-sm-7">
+					<input type="submit" name="add" value="Submit" class="btn btn-primary" />
+					<a href="{{ path('ld_admin_customer_list') }}" class="btn btn-secondary">Back</a>
+				</div>
+			</div>
+			{{ form_rest(form) }}			
+            </form>
+		</div>
+
+	</div>
+</div>
+	
+{% endblock body %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/ldadmin/custom/js/validation.js') }}"></script>
+	<script type="text/javascript">
+    
+	</script>
+{% endblock javascripts %}

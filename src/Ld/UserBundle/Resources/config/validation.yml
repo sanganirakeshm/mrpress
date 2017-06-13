@@ -1,0 +1,82 @@
+Ld\UserBundle\Entity\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [username]
+            message: 
+    properties:
+        email:
+            - NotBlank:
+                message: "Please enter email address."
+                groups: [userRegistration, userUpdate]
+            - Email:
+                message: The email "{{ value }}" is not a valid email.
+                groups: [userRegistration, userUpdate]
+        username:
+            - NotBlank:
+                message: "Please enter email address."
+                groups: [userRegistration, userUpdate]
+            - Length:
+                min: 6
+                minMessage: "Your username must have minimum {{ limit }} characters."
+                max: 32
+                maxMessage: "Your username can have maximum {{ limit }} characters."
+                groups: [userRegistration, userUpdate]
+            - Regex:
+                pattern: /^[A-Za-z0-9-_!#$]+$/
+                message: "username can contains character, number and special chars like -_!#$"
+                groups: [userRegistration, userUpdate]
+        plainPassword:
+            - NotBlank:
+                message: "Please enter password."
+                groups: [userRegistration, ChangePassword]
+            - Length:
+                min: 8
+                minMessage: "Your password must have minimum {{ limit }} characters."
+                max: 18
+                maxMessage: "Your password can have maximum {{ limit }} characters."
+                groups: [userRegistration, ChangePassword]
+            - Regex:
+                pattern: /^[A-Za-z0-9!@#$_]+$/
+                message: "Password can contains characters, numbers and special chars like !@#$_"
+                groups: [userRegistration, ChangePassword]
+        firstname:
+           - NotBlank:
+                message: "Please enter first name."
+                groups: [userRegistration, userUpdate]
+        lastname:
+           - NotBlank:
+                message: "Please enter last name."
+                groups: [userRegistration, userUpdate]
+        groups:
+            - NotBlank:
+                message: "Please select group."
+                groups: [userRegistration, userUpdate]  
+                
+                
+Ld\UserBundle\Entity\Permission:
+    properties:
+        name:
+            - NotBlank:
+                message: "Please enter permission name."
+                groups: [userPermission, updatePermission]
+        code:
+            - NotBlank:
+                message: "Please enter email address."
+                groups: [userPermission, updatePermission]
+        status:
+            - NotBlank:
+                message: "Please select status."
+                groups: [userPermission, updatePermission] 
+                
+Ld\UserBundle\Entity\PermissionCategory:
+    properties:
+        name:
+            - NotBlank:
+                message: "Please enter category name."
+                groups: [addPermissionCategory, updatePermissionCategory]        
+        status:
+            - NotBlank:
+                message: "Please select status."
+                groups: [addPermissionCategory, updatePermissionCategory]                                         
+            
+            

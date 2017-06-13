@@ -1,0 +1,11 @@
+ld_user_homepage:
+    path:     /
+    defaults: { _controller: LdUserBundle:Pages:home }
+    
+ld_user_dashboard:
+    path:     /dashboard
+    defaults: { _controller: LdUserBundle:Dashboard:index }
+
+home:
+    path:     /home
+    defaults: { _controller: LdUserBundle:Pages:home }

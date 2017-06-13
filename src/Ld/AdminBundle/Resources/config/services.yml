@@ -1,0 +1,13 @@
+services:
+#    ld_admin.example:
+#        class: Ld\AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    grid_helper_function:
+        class:  'Ld\AdminBundle\Helper\GridFunction'
+        arguments:  [@doctrine]
+        
+    admin_permission:
+        class: Ld\AdminBundle\Controller\AdminPermissionController
+        arguments: 
+            container: "@service_container"

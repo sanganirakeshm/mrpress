@@ -1,0 +1,39 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    ld_user.registration.form.type:
+        class: Ld\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%, '@service_container']
+        tags:
+            - { name: form.type, alias: ld_user_registration }
+
+    login_listener:
+        class: Ld\UserBundle\EventListener\LoginListener
+        arguments: ['@router', '@security.context', '@doctrine', '@session', '@service_container']
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.interactive_login' }
+
+    login_user_success_handler:
+        class:  'Ld\UserBundle\EventListener\LoginSuccessHandler'
+        arguments:  [@router, @security.context, @session, @doctrine, '@service_container']
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }
+                
+    logout_listener:
+        class: Ld\UserBundle\EventListener\LogoutListener
+        arguments: ['@router', '@security.context', '@doctrine']
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.interactive_logout' }
+            
+    login_success_handler:
+        class:  'Ld\AdminBundle\EventListener\LoginSuccessHandler'
+        arguments:  ['@router', '@security.context', '@session', '@doctrine']
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }

@@ -1,0 +1,67 @@
+{% extends "LdAdminBundle::layout.html.twig" %}
+
+{% block body %}
+
+<div class="content-area p-y-1">
+	<div class="container-fluid">
+		<h4>Customer</h4>
+		<ol class="breadcrumb no-bg m-b-1">
+			<li class="breadcrumb-item"><a href="#">User Management</a></li>			
+			<li class="breadcrumb-item active">Update Customer</li>
+		</ol>
+		<div class="m-b-0-25" id="alermeg">
+			{% include "LdAdminBundle::flashMessage.html.twig" %}
+		</div>
+		<div class="box box-block bg-white">
+			<h5>Edit Customer</h5>
+			<form action="{{ path('ld_admin_customer_edit', { 'id': user.id }) }}" method="POST" {{ form_enctype(form) }} class="form-horizontal" id="edit_cust_form" >
+			{% include 'LdAdminBundle:Customer:_cust_form.html.twig' with {'form': form, 'user':user} %}
+			<div class="form-group row">
+				<div class="offset-sm-5 col-sm-7">
+					<input type="submit" name="update" value="Update" class="btn btn-primary" />
+					<a href="{{ path('ld_admin_customer_list') }}" class="btn btn-secondary">Back</a>
+				</div>
+			</div>
+			{{ form_rest(form) }}			
+            </form>
+		</div>
+		
+		<div class="box box-block bg-white">
+			<h5>Change Password</h5>
+			<form action="{{ path('ld_admin_customer_edit', { 'id': user.id }) }}" method="POST" {{ form_enctype(changePasswordForm) }} class="form-horizontal" id="change_password_cust">
+				<div class="form-group row">
+					<label for="example-text-input" class="col-xs-2 col-form-label">New Password: </label>
+					<div class="col-xs-5">
+						{{ form_widget(changePasswordForm.plainPassword.first, { 'attr': { 'placeholder': 'New Password', 'class': 'form-control'}}) }}
+                        <div class="serverError">{{ form_errors(changePasswordForm.plainPassword.first) }} </div>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label for="example-text-input" class="col-xs-2 col-form-label">Confirm Password: </label>
+					<div class="col-xs-5">
+						{{ form_widget(changePasswordForm.plainPassword.second, { 'attr': { 'placeholder': 'Confirm Password', 'class': 'form-control'}}) }}
+                        <div class="serverError">{{ form_errors(changePasswordForm.plainPassword.second) }} </div>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<div class="offset-sm-2 col-sm-10">
+						<input type="submit" name="update" value="Update Passowrd" class="btn btn-primary" />
+						<a href="{{ path('ld_admin_customer_list') }}" class="btn btn-secondary">Back</a>
+					</div>
+				</div>
+				{{ form_rest(changePasswordForm) }}							  
+            </form>
+		</div>
+	</div>
+</div>
+	
+{% endblock body %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/ldadmin/custom/js/validation.js') }}"></script>
+	<script type="text/javascript">
+    
+	</script>
+{% endblock javascripts %}

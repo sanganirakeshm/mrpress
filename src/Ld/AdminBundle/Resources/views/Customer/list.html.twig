@@ -1,0 +1,98 @@
+{% extends "LdAdminBundle::layout.html.twig" %}
+
+{% block title %}LdAdminBundle:Customer:list{% endblock %}
+
+{% block body %}
+<div class="content-area p-y-1">	
+	<div class="container-fluid">		
+		<h4>Customer</h4>
+		<ol class="breadcrumb no-bg m-b-1">
+			<li class="breadcrumb-item"><a href="#">User Management</a></li>
+			<li class="breadcrumb-item active">Customer List</li>
+		</ol>
+		<div class="m-b-0-25" id="alermeg">
+			{% include "LdAdminBundle::flashMessage.html.twig" %}
+		</div>
+		<div class="box box-block bg-white">
+			<div class="m-b-1">
+				<div class="clearfix">
+					<h5 class="pull-left">Customer List</h5>
+					<h5 class="pull-right">
+						{% if admin_permission.checkPermission('admin_cust_add') %}
+						<a href="{{ path('ld_admin_customer_add') }}" class="btn btn-primary label-left b-a-0 waves-effect waves-light m-b-0-25 m-r-0-5"><span class="btn-label"><i class="fa fa-plus-square-o"></i></span> Add New</a>
+						{% endif %}
+						{% if admin_permission.checkPermission('admin_cust_activeInactive') %}
+						<a href="javascript:void(0)" class="btn btn-success label-left b-a-0 waves-effect waves-light m-b-0-25 m-r-0-5" onclick="ajaxActiveInactiveAll('{{ path('ld_admin_customer_activeInactive') }}', '1','','')"><span class="btn-label"><i class="fa fa-eye"></i></span> Active</a>
+						{% endif %}
+						{% if admin_permission.checkPermission('admin_cust_activeInactive') %}						
+						<a href="javascript:void(0)" class="btn btn-warning label-left b-a-0 waves-effect waves-light m-b-0-25 m-r-0-5" onclick="ajaxActiveInactiveAll('{{ path('ld_admin_customer_activeInactive') }}', '0','','')"><span class="btn-label"><i class="fa fa-eye-slash"></i></span> In Active</a>
+						{% endif %}
+						{% if admin_permission.checkPermission('admin_cust_delete') %}
+						<a href="javascript:void(0)" class="btn btn-danger label-left b-a-0 waves-effect waves-light m-b-0-25" onclick="ajaxDeleteAll('{{ path('ld_admin_customer_delete') }}','','')"><span class="btn-label"><i class="ti-trash"></i></span> Delete</a>
+						{% endif %}
+					</h5>					
+				</div>				
+			</div>
+						
+						
+			<p class="font-90 text-muted m-b-1">Advance Search</p>
+			<div class="row advsearchbar">
+				<div class="col-md-4">
+					<h6>Fistname</h6>
+					<div id="serFistname"></div>					
+				</div>
+				<div class="col-md-4">
+					<h6>Lastname</h6>
+					<div id="serLastname"></div>					
+				</div>
+				<div class="col-md-4">
+					<h6>Username</h6>
+					<div id="serUsername"></div>					
+				</div>
+			</div>
+		</div>
+		<div class="box box-block bg-white">
+			
+			<table class="table table-striped table-bordered dataTable" id="customer_grid">
+				<thead>
+					<tr>
+						<th></th>
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+				<tfoot>
+					<tr>
+						<th></th>
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }} 
+    <script type="text/javascript">        
+    var dataTableJsonPath 			= {% if admin_permission.checkPermission('admin_cust_list') %} '{{ path('ld_admin_customer_list_json') }}' {% else %} '' {% endif %} ;
+    var customerEditPath 			= {% if admin_permission.checkPermission('admin_cust_edit') %} '{{ path('ld_admin_customer_edit', {'id': 'cust_id'}) }}' {% else %} '' {% endif %} ;
+    var customerDeletePath 			= {% if admin_permission.checkPermission('admin_cust_delete') %} '{{ path('ld_admin_customer_delete') }}' {% else %} '' {% endif %} ;
+    var customerActiveInactivePath 	= {% if admin_permission.checkPermission('admin_cust_activeInactive') %} '{{ path('ld_admin_customer_activeInactive') }}' {% else %} '' {% endif %} ;
+    var recordPerPage 				= 10;
+
+    </script>
+    <script type="text/javascript" src="{{ asset('bundles/ldadmin/grid_js/customer_list.js') }}"></script>	
+{% endblock javascripts %}    

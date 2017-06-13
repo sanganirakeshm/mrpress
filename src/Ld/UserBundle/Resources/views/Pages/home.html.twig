@@ -1,0 +1,397 @@
+{% extends "LdUserBundle::layout.html.twig" %}
+
+{% block title %}LdUserBundle:Pages:home{% endblock %}
+
+{% block body %}
+{% include 'LdUserBundle::slider.html.twig' %} 
+<div class="container offset-top-35">
+	<div class="row services-box-mobile arrow-on-white">
+		<div class="col-md-4">
+			<!-- services-box -->
+			<a href="#" class="services-box fill-bg-1 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
+				<div class="icon-box">
+					<svg class="svg-washer-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 32 32">
+						<path d="M29 29c0 1.519-1.231 2.75-2.75 2.75h-20.5c-1.519 0-2.75-1.231-2.75-2.75v-26c0-1.519 1.231-2.75 2.75-2.75h20.5c1.519 0 2.75 1.231 2.75 2.75v26zM27.5 3c0-0.69-0.56-1.25-1.25-1.25h-20.5c-0.69 0-1.25 0.56-1.25 1.25v26c0 0.69 0.56 1.25 1.25 1.25h20.5c0.69 0 1.25-0.56 1.25-1.25v-26z"></path>
+						<path d="M28.036 9.75h-24.5c-0.414 0-0.537-0.336-0.537-0.75v-5.76c0-1.537 1.226-2.99 2.749-2.99h20.31c1.607 0 2.94 1.576 2.94 2.99v5.76c0 0.414-0.55 0.75-0.964 0.75zM4.5 8.25h23v-5.009c0-0.675-0.761-1.491-1.44-1.491h-20.31c-0.684 0-1.249 0.794-1.249 1.491v5.009z"></path>
+						<path d="M11.75 9.5c-0.414 0-0.75-0.336-0.75-0.75v-7.5c0-0.414 0.336-0.75 0.75-0.75s0.75 0.336 0.75 0.75v7.5c0 0.414-0.336 0.75-0.75 0.75z"></path>
+						<path d="M25.603 5.12c0 0.714-0.578 1.293-1.293 1.293s-1.293-0.579-1.293-1.293c0-0.714 0.578-1.293 1.293-1.293s1.293 0.579 1.293 1.293z"></path>
+						<path d="M21.982 5.12c0 0.714-0.578 1.293-1.293 1.293s-1.293-0.579-1.293-1.293c0-0.714 0.578-1.293 1.293-1.293s1.293 0.579 1.293 1.293z"></path>
+						<path d="M18.362 5.12c0 0.714-0.58 1.293-1.293 1.293-0.714 0-1.293-0.579-1.293-1.293s0.578-1.293 1.293-1.293c0.714 0 1.293 0.579 1.293 1.293z"></path>
+						<g class="disc">
+							<path d="M15.613 27.917c-3.961 0-7.183-3.222-7.183-7.183s3.222-7.183 7.183-7.183c3.96 0 7.183 3.222 7.183 7.183s-3.223 7.183-7.183 7.183zM15.613 15.051c-3.134 0-5.683 2.549-5.683 5.683s2.55 5.683 5.683 5.683c3.133 0 5.683-2.55 5.683-5.683s-2.55-5.683-5.683-5.683z"></path>
+							<path d="M12.876 23.106c-1.754 0-3.277-1.023-4.047-1.842-0.284-0.302-0.27-0.776 0.032-1.060 0.3-0.284 0.774-0.271 1.058 0.030v0c0.104 0.109 2.57 2.636 5.094 0.521 2.857-2.391 5.86-1.037 7.047 0.013 0.31 0.274 0.34 0.748 0.066 1.058s-0.749 0.34-1.058 0.066c-0.099-0.087-2.521-2.139-5.091 0.013-1.045 0.875-2.11 1.201-3.1 1.201z"></path>
+							<path d="M19.655 22.189c0 0.286-0.231 0.517-0.517 0.517s-0.517-0.231-0.517-0.517c0-0.285 0.231-0.517 0.517-0.517s0.517 0.231 0.517 0.517z"></path>
+							<path d="M19.137 24.258c0 0.285-0.231 0.517-0.517 0.517s-0.517-0.232-0.517-0.517 0.232-0.517 0.517-0.517c0.285 0 0.517 0.231 0.517 0.517z"></path>
+							<path d="M17.068 22.706c0 0.285-0.231 0.517-0.517 0.517s-0.517-0.231-0.517-0.517c0-0.286 0.231-0.517 0.517-0.517s0.517 0.231 0.517 0.517z"></path>
+							<path d="M16.034 24.775c0 0.285-0.231 0.517-0.517 0.517s-0.517-0.231-0.517-0.517c0-0.286 0.231-0.517 0.517-0.517s0.517 0.231 0.517 0.517z"></path>
+							<path d="M12.93 23.74c0 0.285-0.231 0.517-0.517 0.517s-0.517-0.231-0.517-0.517 0.231-0.517 0.517-0.517c0.286 0 0.517 0.232 0.517 0.517z"></path>
+						</g>
+					</svg>
+				</div>
+				<h5 class="title">Laundry Services</h5>
+				<p>
+					Let us pick up your dirty laundry, sort it, stains, wash, dry, fold and deliver back to you in one neat, easy package.
+				</p>
+			</a>
+			<!-- /services-box -->
+		</div>
+		<a href="#" class="col-md-4">
+			<!-- services-box -->
+			<div class="services-box  fill-bg-2 animation" data-animation="fadeInUp" data-animation-delay="0s">
+				<div class="icon-box">
+					<svg class="svg-hanger-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 35 32">
+						<path class="hanger" d="M32.702 20.62l-13.413-12.155c-0.15-0.137-0.316-0.252-0.489-0.352v-1.965h-0.128c-0.088-0.27-0.301-0.497-0.673-0.583-0.831-0.191-1.748-0.465-2.315-1.143-0.274-0.328-0.359-0.76-0.242-0.988 0.664-1.294 2.593-0.9 3.702-0.421 1.181 0.51 2.21-1.211 1.019-1.725-2.057-0.889-5.404-1.289-6.511 1.245-0.855 1.956 0.436 3.464 2.078 4.32v1.245c-0.184 0.104-0.36 0.223-0.52 0.367l-13.411 12.155c-1.127 1.021-0.748 1.849 0.845 1.849h6.377v-2.155h-3.674l11.312-10.251c0.145-0.132 0.361-0.208 0.592-0.208s0.447 0.075 0.592 0.208l11.312 10.251h-3.747v2.155h6.45c1.593 0 1.971-0.828 0.845-1.849z"></path>
+						<path class="clothes" d="M10.097 20.314v11.686l3.376-1.023-0.031-6.447c-0.003-0.594 0.477-1.081 1.072-1.083 0.002 0 0.004 0 0.005 0 0.593 0 1.075 0.479 1.077 1.072l0.028 5.806 8.704-2.636v-9.561h-14.232v2.186z"></path>
+					</svg>
+				</div>
+				<h5 class="title">Dry Cleaning Services</h5>
+				<p>
+					SMU students and local residents love on our reliable dry cleaning services for the fast, accurate, top quality results.
+				</p>
+			</div>
+			<!-- /services-box -->
+		</a>
+		<a href="#" class="col-md-4">
+			<!-- services-box -->
+			<div class="services-box fill-bg-3 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
+				<div class="icon-box">
+					<svg class="svg-vacuumcleaner-icon animated-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 39 32">
+						<path class="tube" d="M37.644 31.192h-9.893c-0.259-1.001 0.157-1.911 0.717-2.333 0.567-0.428 1.67-0.211 2.641-0.338-0.084-0.428-0.199-0.965-0.386-1.344-4.045-8.229-8.121-16.452-12.166-24.681-0.223-0.458-0.705-0.729-1.212-0.699-0.567 0.030-1.145 0.006-1.766 0.006v-1.718c1.121 0 2.267-0.084 3.388 0.048 0.35 0.042 0.717 0.621 0.922 1.037 2.888 5.787 5.745 11.593 8.615 17.393 1.248 2.526 2.514 5.046 3.732 7.59 0.338 0.705 0.663 1.459 0.983 2.399 0.416 0 0.826 0.012 1.459 0.018 1.019 0.012 1.447 0.241 2.020 0.965 0.47 0.591 0.627 0.904 1.031 1.537-0.042 0.048-0.054 0.060-0.084 0.121z"></path>
+						<path class="hose" d="M14.12 0.898c0 0.41 0 0.711 0 0.892-0.953 0.362-1.887 0.591-2.701 1.043-1.616 0.892-2.182 2.417-1.682 4.184 0.518 1.833 1.718 3.231 2.99 4.576 3.286 3.473 6.601 6.921 9.863 10.412 0.603 0.645 1.097 1.411 1.513 2.194 1.278 2.436 0.32 4.105-2.496 4.317 0-0.326 0-0.651 0-0.983 0.036-0.024 0.078-0.072 0.127-0.078 1.857-0.247 2.363-1.079 1.411-2.695-0.723-1.224-1.634-2.369-2.604-3.418-3.153-3.4-6.402-6.71-9.543-10.116-0.784-0.85-1.429-1.893-1.917-2.948-1.495-3.255-0.006-6.246 3.466-7.138 0.494-0.115 1.007-0.151 1.573-0.241z"></path>
+						<path class='vacuumcleaner' d="M7.049 20.883c-3.069 0-5.558 2.49-5.558 5.558s2.49 5.558 5.558 5.558c3.069 0 5.558-2.49 5.558-5.558s-2.49-5.558-5.558-5.558zM7.049 29.468c-1.67 0-3.026-1.356-3.026-3.026s1.356-3.026 3.026-3.026c1.67 0 3.026 1.356 3.026 3.026s-1.356 3.026-3.026 3.026z"></path>
+						<path class='vacuumcleaner' d="M19.48 23.059c-1.748-1.272-3.442-2.616-5.227-3.828-0.663-0.452-1.501-0.868-2.279-0.904-2.616-0.115-5.245-0.066-7.867-0.036-0.669 0.006-1.17 0.398-1.23 1.103-0.054 0.681-0.018 1.375-0.012 2.176 1.157-1.043 2.683-1.682 4.365-1.682 3.593 0 6.511 2.912 6.511 6.511 0 1.338-0.404 2.586-1.097 3.617 2.393 0 4.769 0.030 7.144-0.024 0.748-0.018 1.037-0.639 1.049-1.35 0.012-0.953-0.024-1.905 0.012-2.852 0.018-1.164-0.434-2.050-1.369-2.731z"></path>
+					</svg>
+				</div>
+				<h5 class="title">Carpet Cleaning</h5>
+				<p>
+					To keep carpet at peak performance, we recommend professional deep cleaning your carpet every 12 to 18 months.
+				</p>
+			</div>
+			<!-- /services-box -->
+		</a>
+	</div>
+</div>
+<div class="container">
+	<h2 class="title-underline">we are passionate about laundry</h2>
+	<p class="text-center info-text">
+		We are professionals in the laundry and dry cleaning business, which means we always stay up to date on the latest technologies, cleaning methods, and solutions for dealing with stains or delicate fabrics. Plus, we maintain the highest standards of business integrity by following local and national regulations and environmental safety rules!
+	</p>
+</div>
+<div class="fill-bg-2 offset-top60 clearfix">
+	<div class="container offset-top0">
+		<div class="row">
+			<div class="box-step animation" data-animation="fadeIn" data-animation-delay="0s">
+				<h2>How It Works: in 4 Easy Steps</h2>
+				<a href="#" class="item">
+					<div class="icon">
+						<img src="{{ asset('bundles/lduser/images/img_icon_01.png') }}" class="img-responsive1" alt="">
+					</div>
+					<h6 class="description">Step 1</h6>
+					<h4 class="title">Bag up all your dirty clothes</h4>
+				</a>
+				<a href="#" class="item animation" data-animation="fadeIn" data-animation-delay="0.25s">
+					<div class="icon">
+						<img src="{{ asset('bundles/lduser/images/img_icon_02.png') }}" class="img-responsive1" alt="">
+					</div>
+					<h6 class="description">Step 2</h6>
+					<h4 class="title">We pick up your
+						<br> clothes</h4>
+				</a>
+				<a href="#" class="item animation" data-animation="fadeIn" data-animation-delay="0.5s">
+					<div class="icon">
+						<img src="{{ asset('bundles/lduser/images/img_icon_03.png') }}" class="img-responsive1" alt="">
+					</div>
+					<h6 class="description">Step 3</h6>
+					<h4 class="title">We clean your
+						<br> clothes</h4>
+				</a>
+				<a href="#" class="item animation" data-animation="fadeIn" data-animation-delay="0.75s">
+					<div class="icon">
+						<img src="{{ asset('bundles/lduser/images/img_icon_04.png') }}" class="img-responsive1" alt="">
+					</div>
+					<h6 class="description">Step 4</h6>
+					<h4 class="title">We deliver clean, folded clothes</h4>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container offset-top90">
+	<div class="row">
+		<div class="col-md-5">
+			<h2 class="title-underline">Our Approach</h2>
+			<p class="text-center">
+				We approach workforce accommodations with a property development mindset. Our “Develop. Own. Operate.” business model produces integrated solutions that enable clients to focus on their core business. Clients benefit from consistent service delivery with greater cost and quality control as well as more efficient use of their operational and financial resources.
+			</p>
+		</div>
+		<div class="divider visible-xs visible-sm"></div>
+		<div class="col-md-7">
+			<div class="video-indent">
+				<div class="myvideo">
+					<iframe src="https://www.youtube.com/embed/z91MtZpcsKY?rel=0"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<h2 class="title-underline">Affordable Prices</h2>
+	<div class="row product-box-mobile arrow-on-white">
+		<div class="col-md-4">
+			<!-- product-box -->
+			<a href="#" class="product-box animation" data-animation="fadeInUp" data-animation-delay="0s">
+				<span class="icon icon-shirt"></span>
+				<h3 class="title">
+					From <span class="base-color">$2</span> per shirt
+				</h3>
+				<h6 class="description">
+					Shirt service
+				</h6>
+			</a>
+			<!-- /product-box -->
+		</div>
+		<div class="col-md-4">
+			<!-- product-box -->
+			<a href="#" class="product-box animation" data-animation="fadeInUp" data-animation-delay="0s">
+				<span class="icon icon-bag"></span>
+				<h3 class="title">
+					<span class="base-color">$2.50</span> per kg
+				</h3>
+				<h6 class="description">
+					Laundry service
+				</h6>
+			</a>
+			<!-- /product-box -->
+		</div>
+		<div class="col-md-4">
+			<!-- product-box -->
+			<a href="#" class="product-box animation" data-animation="fadeInUp" data-animation-delay="0s">
+				<span class="icon icon-towel"></span>
+				<h3 class="title">
+					From <span class="base-color">$2</span> per item
+				</h3>
+				<h6 class="description">
+					Dry cleaning
+				</h6>
+			</a>
+			<!-- /product-box -->
+		</div>
+	</div>
+</div>
+<div class="content carusel--parallax" data-image="{{ asset('bundles/lduser/images/parallax-img-01.jpg') }}">
+	<div class="carousel-blog slick-dotted">
+		<div>
+			<div class="container">
+				<div class="row">
+					<div class="carousel-blog-box">
+						<div class="col-xs-3">
+							<a href="#" class="img"></a>
+						</div>
+						<div class="col-xs-9">
+							<div class="center-y">
+								<h4 class="title"><a href="#">Charles N. Rock</a></h4>
+								<div class="description">
+									Absolutely the best in town! The clothes are returned neatly folded, clean and smelling great.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="container">
+				<div class="row">
+					<div class="carousel-blog-box">
+						<div class="col-xs-3">
+							<a href="#" class="img"></a>
+						</div>
+						<div class="col-xs-9">
+							<div class="center-y">
+								<h4 class="title"><a href="#">Charles N. Rock</a></h4>
+								<div class="description">
+									Absolutely the best in town! The clothes are returned neatly folded, clean and smelling great.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="container">
+				<div class="row">
+					<div class="carousel-blog-box">
+						<div class="col-xs-3">
+							<a href="#" class="img"></a>
+						</div>
+						<div class="col-xs-9">
+							<div class="center-y">
+								<h4 class="title"><a href="#">Charles N. Rock</a></h4>
+								<div class="description">
+									Absolutely the best in town! The clothes are returned neatly folded, clean and smelling great.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<h2 class="title-underline">Why Choose Us</h2>
+	<div class="row permission-box-mobile arrow-on-white">
+		<div class="col-md-4">
+			<!-- permission box -->
+			<a href="#" class="permission-box animation" data-animation="fadeInLeft" data-animation-delay="0s">
+				<span class="icon icon-bright-lightbulb"></span>
+				<div class="description">
+					<h4 class="title">Persionalized Experience</h4>
+					<p>
+						We take utmost care of your clothes, segregating based on the cloth type and giving you instant clothes to make a statement.
+					</p>
+				</div>
+			</a>
+			<!-- /permission box -->
+		</div>
+		<div class="col-md-4">
+			<!-- permission box -->
+			<a href="#" class="permission-box animation" data-animation="fadeIn" data-animation-delay="0s">
+				<span class="icon icon-tag-1"></span>
+				<div class="description">
+					<h4 class="title">Affordable Pricing</h4>
+					<p>
+						Prices that suits your pocket is one of our USP. An option of choosing between 2 types of pricing is available.
+					</p>
+				</div>
+			</a>
+			<!-- /permission box -->
+		</div>
+		<div class="col-md-4">
+			<!-- permission box -->
+			<a href="#" class="permission-box animation" data-animation="fadeInRight" data-animation-delay="0s">
+				<span class="icon icon-reading-book"></span>
+				<div class="description">
+					<h4 class="title">Convenience</h4>
+					<p>
+						With just a tap of a button, your laundry gets done, giving your leisure time to spend with family and friends.
+					</p>
+				</div>
+			</a>
+			<!-- /permission box -->
+		</div>
+		<div class="clearfix hidden-xs hidden-sm"></div>
+		<div class="col-md-4">
+			<!-- permission box -->
+			<a href="#" class="permission-box animation" data-animation="fadeInLeft" data-animation-delay="0s">
+				<span class="icon icon-quality"></span>
+				<div class="description">
+					<h4 class="title">Quality</h4>
+					<p>
+						We use the best in class products, to assure that your favorite clothes are always there for you to wear.
+					</p>
+				</div>
+			</a>
+			<!-- /permission box -->
+		</div>
+		<div class="col-md-4">
+			<!-- permission box -->
+			<a href="#" class="permission-box animation" data-animation="fadeIn" data-animation-delay="0s">
+				<span class="icon icon-express-delivery"></span>
+				<div class="description">
+					<h4 class="title">Express Delivery</h4>
+					<p>
+						Forgot to wash your clothes for interview/business meeting, never mind. With our super express delivery, we would get your laundry done in less than 8 hours.
+					</p>
+				</div>
+			</a>
+			<!-- /permission box -->
+		</div>
+		<div class="col-md-4">
+			<!-- permission box -->
+			<a href="#" class="permission-box animation" data-animation="fadeInRight" data-animation-delay="0s">
+				<span class="icon icon-interface"></span>
+				<div class="description">
+					<h4 class="title">Instant Order Update</h4>
+					<p>
+						Regular updates of your order, to help you keep a track of your laundry and plan accordingly.
+					</p>
+				</div>
+			</a>
+			<!-- /permission box -->
+		</div>
+	</div>
+</div>
+<div class="container-fluid content">
+	<div id="map"></div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }} 
+    <!-- REVOLUTION JS FILES -->
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
+	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS -->
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/lduser/external/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function () {
+
+			// Revolution Slider
+			jQuery('.tp-banner').show().revolution({
+				sliderType: "standard",
+				sliderLayout: "fullwidth",
+				dottedOverlay: "none",
+				delay: 6000,
+				navigation: {
+					keyboardNavigation: "off",
+					keyboard_direction: "horizontal",
+					mouseScrollNavigation: "off",
+					mouseScrollReverse: "default",
+					onHoverStop: "off",
+					touch: {
+						touchenabled: "on",
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						swipe_direction: "horizontal",
+						drag_block_vertical: false
+					},
+					arrows: {
+						style: "uranus",
+						enable: true,
+						hide_onleave: true
+					}
+				},
+				responsiveLevels: [1920, 1200, 992, 768],
+				visibilityLevels: [1920, 1200, 992, 768],
+				gridwidth: [1920, 1200, 992, 768],
+				gridheight: [778, 486, 402, 300],
+				lazyType: "single",
+				shadow: 0,
+				spinner: "off",
+				stopLoop: "on",
+				stopAfterLoops: 0,
+				shuffle: "off",
+				autoHeight: "off",
+				fullScreenAutoWidth: "off",
+				fullScreenAlignForce: "off",
+				disableProgressBar: "on",
+				hideThumbsOnMobile: "off",
+				hideSliderAtLimit: 0,
+				hideCaptionAtLimit: 0,
+				hideAllCaptionAtLilmit: 0,
+				debugMode: false
+			});
+		}); //ready
+	</script>	
+{% endblock javascripts %}

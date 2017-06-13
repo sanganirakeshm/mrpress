@@ -1,0 +1,40 @@
+<!-- Vendor JS -->
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/jquery/jquery-1.12.3.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/tether/js/tether.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/detectmobilebrowser/detectmobilebrowser.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/jscrollpane/jquery.mousewheel.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/jscrollpane/mwheelIntent.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/jscrollpane/jquery.jscrollpane.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/DataTables/js/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/DataTables/js/dataTables.bootstrap4.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/DataTables/Responsive/js/dataTables.responsive.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/DataTables/Responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/DataTables/Buttons/js/dataTables.buttons.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/DataTables/Buttons/js/buttons.bootstrap4.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/custom/js/jquery.dataTables.columnFilter.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/custom/js/jquery-confirm.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/custom/js/custom_function.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/custom/js/jquery.validation.min.js') }}"></script>	
+
+<!-- Neptune JS -->
+<script type="text/javascript" src="{{ asset('bundles/ldadmin/js/app.js') }}"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	window.setTimeout(function() {
+	    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+	        $(this).remove(); 
+	    });
+	}, 4000);
+});
+
+$( document ).ajaxStart(function() {
+	  $( ".preloader" ).show();
+});
+	
+$( document ).ajaxStop(function() {
+	  $( ".preloader" ).hide();
+	  setTimeout(function(){ hideErrorSuccessMsg(); }, 4000);
+});
+</script>

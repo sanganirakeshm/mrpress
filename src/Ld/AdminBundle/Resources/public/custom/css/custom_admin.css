@@ -1,0 +1,8 @@
+.actionicon a.btn {margin-right:0.5rem;}
+.mainactionicon a.btn, .mainactionicon button.btn {margin-right:0.5rem;}
+.serverError ul {list-style-type:none;padding-left: 0px !important;}
+.serverError ul li{color:#ff0000;font-size:13px;}
+.col-bx-form{ height:80px !important; }
+select.form-control {overflow:auto !important;}
+label.error {color:#ff0000;font-size:13px;}
+input.error, select.error {border-color:#ff0000}

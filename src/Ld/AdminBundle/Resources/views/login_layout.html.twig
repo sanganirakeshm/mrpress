@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>{% block title %}Mr.Press{% endblock %}</title>
+        {% block stylesheets %}
+        	<!-- Vendor CSS -->
+			<link href="{{ asset('bundles/ldadmin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/ldadmin/vendor/themify-icons/themify-icons.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/ldadmin/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">	
+            
+            <!-- Neptune CSS -->
+			<link rel="stylesheet" href="{{ asset('bundles/ldadmin/css/core.css') }}">
+	
+			<!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+			<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+			<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			<![endif]-->		
+        {% endblock %}
+    </head>
+    
+    <body class="auth-bg">
+    	<div class="auth">
+			<div class="auth-header">
+				<h1>Mr.Press</h1>
+				<h6>Welcome! Sign in to access the admin panel</h6>
+			</div>
+			{% block header %}
+            <div>
+                {#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                {% endif %}#}
+            </div>
+           	{% endblock header %}
+			{% block body %}{% endblock %}			
+		</div> 
+        	
+		{% block javascripts %}
+        
+	        <!-- Vendor JS -->
+			<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/jquery/jquery-1.12.3.min.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/tether/js/tether.min.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('bundles/ldadmin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

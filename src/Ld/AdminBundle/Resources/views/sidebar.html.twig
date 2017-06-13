@@ -1,0 +1,75 @@
+<!-- Sidebar -->
+<div class="site-sidebar-overlay"></div>
+<div class="site-sidebar">
+	<a class="logo" href="index.html">
+		<span class="l-text">Mr.Press</span>
+		<span class="l-icon"></span>
+	</a>
+	<div class="custom-scroll custom-scroll-dark">
+		<ul class="sidebar-menu">
+			<li class="menu-title m-t-0-5">Navigation</li>
+			<li>
+				<a href="{{ path('ld_admin_dashboard') }}" class="waves-effect  waves-light">
+					<span class="s-icon"><i class="ti-dashboard"></i></span>
+					<span class="s-text">Dashborad</span>
+				</a>
+			</li>
+			{% if admin_permission.checkPermission('admin_user_list') or admin_permission.checkPermission('admin_cust_list') %}
+			<li class="menu-title">Admin & Customer Management</li>
+				{% if admin_permission.checkPermission('admin_user_list') %}
+				<li class="with-sub">
+					<a href="#" class="waves-effect  waves-light">
+						<span class="s-caret"><i class="fa fa-angle-down"></i></span>
+						<span class="s-icon"><i class="ti-dashboard"></i></span>
+						<span class="s-text">Admin</span>
+					</a>
+					<ul>
+						{% if admin_permission.checkPermission('admin_user_list') %}
+						<li><a href="{{ path('ld_admin_user_list') }}">User List</a></li>	
+						{% endif %}							
+					</ul>
+				</li>
+				{% endif %}
+				{% if admin_permission.checkPermission('admin_cust_list') %}
+				<li class="with-sub">
+					<a href="#" class="waves-effect  waves-light">
+						<span class="s-caret"><i class="fa fa-angle-down"></i></span>
+						<span class="s-icon"><i class="ti-dashboard"></i></span>
+						<span class="s-text">Customer</span>
+					</a>
+					<ul>					
+						{% if admin_permission.checkPermission('admin_cust_list') %}
+						<li><a href="{{ path('ld_admin_customer_list') }}">User List</a></li>
+						{% endif %}
+					</ul>
+				</li>
+				{% endif %}
+			{% endif %}
+			
+			{% if admin_permission.checkPermission('admin_permission_list') or admin_permission.checkPermission('admin_permission_cat_list') or admin_permission.checkPermission('admin_group_list') %}
+			<li class="menu-title">Group & Permission Management</li>
+				{% if admin_permission.checkPermission('admin_permission_list') or admin_permission.checkPermission('admin_permission_cat_list') or admin_permission.checkPermission('admin_group_list') %}
+				<li class="with-sub">
+					<a href="#" class="waves-effect  waves-light">
+						<span class="s-caret"><i class="fa fa-angle-down"></i></span>
+						<span class="s-icon"><i class="ti-dashboard"></i></span>
+						<span class="s-text">Group & Permission</span>
+					</a>
+					<ul>
+						{% if admin_permission.checkPermission('admin_group_list') %}
+						<li><a href="{{ path('ld_admin_group_list') }}">Group</a></li>
+						{% endif %}
+						{% if admin_permission.checkPermission('admin_permission_cat_list') %}
+						<li><a href="{{ path('ld_admin_permission_category_list') }}">Permission Category</a></li>
+						{% endif %}
+						{% if admin_permission.checkPermission('admin_permission_list') %}
+						<li><a href="{{ path('ld_admin_permission_list') }}">Permission</a></li>
+						{% endif %}									
+					</ul>
+				</li>
+				{% endif %}
+			{% endif %}
+											
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,41 @@
+{% extends "LdAdminBundle::layout.html.twig" %}
+
+{% block body %}
+
+<div class="content-area p-y-1">
+	<div class="container-fluid">
+		<h4>Permission</h4>
+		<ol class="breadcrumb no-bg m-b-1">
+			<li class="breadcrumb-item"><a href="#">Admin</a></li>
+			<li class="breadcrumb-item"><a href="#">Permission Category</a></li>			
+			<li class="breadcrumb-item active">Edit</li>
+		</ol>
+		<div class="m-b-0-25" id="alermeg">
+			{% include "LdAdminBundle::flashMessage.html.twig" %}
+		</div>
+		<div class="box box-block bg-white">
+			<h5>Edit</h5>
+			
+			<form action="{{ path('ld_admin_permission_category_edit', { 'id': permissionCategory.id }) }}" method="POST" {{ form_enctype(form) }} class="form-horizontal" id="edit_permission_category_form" >
+			{% include 'LdAdminBundle:PermissionCategory:_permision_category_form.html.twig' with {'form': form, 'permissionCategory': permissionCategory} %}
+			<div class="form-group row">
+				<div class="offset-sm-5 col-sm-7">
+					<input type="submit" name="add" value="Submit" class="btn btn-primary" />
+					<a href="{{ path('ld_admin_permission_category_list') }}" class="btn btn-secondary">Back</a>
+				</div>
+			</div>
+			{{ form_rest(form) }}			
+            </form>
+		</div>
+
+	</div>
+</div>
+	
+{% endblock body %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/ldadmin/custom/js/validation.js') }}"></script>
+	<script type="text/javascript">
+    
+	</script>
+{% endblock javascripts %}

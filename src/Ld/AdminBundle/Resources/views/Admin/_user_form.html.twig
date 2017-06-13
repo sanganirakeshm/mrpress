@@ -1,0 +1,62 @@
+<div class="row">
+	<div class="col-md-6 col-bx-form">
+		<div class="form-group">
+			<label>First Name</label>
+			{{ form_widget(form.firstname, { 'attr': { 'placeholder': 'First Name', 'class': 'form-control'}}) }}
+            <div class="serverError">{{ form_errors(form.firstname) }}</div>						
+		</div>									
+	</div>
+	<div class="col-md-6 col-bx-form">
+		<div class="form-group">
+			<label>Last Name</label>
+			{{ form_widget(form.lastname, { 'attr': { 'placeholder': 'Last Name', 'class': 'form-control'}}) }}
+            <div class="serverError">{{ form_errors(form.lastname) }}</div>						
+		</div>									
+	</div>
+	<div class="col-md-6 col-bx-form">
+		<div class="form-group">
+			<label>Username</label>
+			{{ form_widget(form.username, { 'attr': { 'placeholder': 'Username', 'class': 'form-control'}}) }}
+            <div class="serverError">{{ form_errors(form.username) }}</div>					
+		</div>									
+	</div>
+	<div class="col-md-6 col-bx-form">
+		<div class="form-group">
+			<label>Email</label>
+			{{ form_widget(form.email, { 'attr': { 'placeholder': 'Email Address', 'class': 'form-control'}}) }}
+            <div class="serverError">{{ form_errors(form.email) }}</div>				
+		</div>									
+	</div>
+	{% if user is empty %}
+	<div class="col-md-6 col-bx-form">
+		<div class="form-group">
+			<label>Password</label>
+			{{ form_widget(form.plainPassword.first, { 'attr': { 'placeholder': 'Password', 'class': 'form-control'}}) }}
+            <div class="serverError">{{ form_errors(form.plainPassword.first) }}</div>				
+		</div>									
+	</div>
+	<div class="col-md-6 col-bx-form">
+		<div class="form-group">
+			<label>Confirm Password</label>
+			{{ form_widget(form.plainPassword.second, { 'attr': { 'placeholder': 'Confirm Password', 'class': 'form-control'}}) }}
+            <div class="serverError">{{ form_errors(form.plainPassword.second) }}</div>			
+		</div>									
+	</div>
+	{% endif %}
+	<div class="col-md-6 col-bx-form"  style="height:140px !important;">
+		<div class="form-group">
+			<label>Group</label>
+			{{ form_widget(form.groups, { 'attr': { 'placeholder': 'Group', 'class': 'form-control'}}) }}
+            <div class="serverError">{{ form_errors(form.groups) }}</div>		
+		</div>									
+	</div>
+	{% if (app.user.groupCode == 'SuperAdmin') or (user.id != app.user.Id)  %}
+	<div class="col-md-6 col-bx-form">
+		<div class="form-group">
+			<label>Active</label>
+			{{ form_widget(form.enabled, { 'attr': { 'placeholder': 'Active', 'class': 'form-control'}}) }}
+            <div class="serverError">{{ form_errors(form.enabled) }}</div>		
+		</div>									
+	</div>
+	{% endif %}	
+</div>

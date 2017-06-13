@@ -1,0 +1,27 @@
+{% extends "DhiUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block body %}
+<section class="content">
+    
+        <div class="min_cont_hight">
+            <div class="row">
+                {% block fos_user_content %}
+                    <div class="msgBox verif_succ_box">
+                        <div class="msgboxin">
+                            <p>Congratulations, Your email has been verified successfully.</p>
+                            <p>
+	                            {% if app.user %}
+	                            	Click <a href="{{ path('dhi_service_plan', {'service': 'IPTV' }) }}">here</a> <link> to add your exchangeVUE packages and start viewing your favorite tv shows, movies, sports and more!
+	                            {% else %}
+	                            	Now you can <a href="{{ url('fos_user_security_login') }}">signin</a> here!
+	                            {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                {% endblock fos_user_content %}
+            </div>
+        </div>
+   
+</section>    
+{% endblock body %}

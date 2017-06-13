@@ -1,0 +1,57 @@
+{% extends "LdUserBundle::layout.html.twig" %}
+
+{% block body %}
+{% block fos_user_content %}
+{% trans_default_domain 'FOSUserBundle' %}
+<section class="signup">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-10 col-md-6">
+				<h2>Create an account <a href="{{ url('fos_user_security_login') }}" class="pull-right">Already have an account?</a></h2>
+				<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" id="fos_user_registration_register" novalidate>
+				                    			
+					<div class="form-group full-width">
+						{{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'Username'}}) }}
+						<div class="serverError">{% if form_errors(form.username) %}{{ form_errors(form.username) }}{% endif %}</div>						
+					</div>
+					<div class="form-group half-width">
+						{{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email address'}}) }}
+                        <div class="serverError">{% if form_errors(form.email) %}{{ form_errors(form.email) }}{% endif %}</div>						
+					</div>
+					
+				  	<div class="form-group half-width error_password">
+				  		{{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'Password'}}) }}
+                        <div class="serverError">{% if form_errors(form.plainPassword.first) %}{{ form_errors(form.plainPassword.first) }}{% endif %}</div>						
+                    </div>
+					<div class="form-group half-width">
+						{{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'Confirm password'}}) }}
+                        <div class="serverError">{% if form_errors(form.plainPassword.second) %}{{ form_errors(form.plainPassword.second) }}{% endif %}</div>						
+					</div>
+					<div class="form-group half-width clearfix">
+						{{ form_widget(form.firstname, { 'attr': {'class': 'form-control', 'data-prompt-position': 'topRight', 'placeholder': 'First name'}}) }}
+                        <div class="serverError">{% if form_errors(form.firstname) %}{{ form_errors(form.firstname) }}{% endif %}</div>						
+					</div>
+
+
+					<div class="pull-right half-width register_box">											  
+					  	<div class="form-group full-width-in">
+					  		<button type="submit" class="btn btn-success full-width-in" >{{ 'registration.submit'|trans }}</button>
+					  	</div>
+					</div>
+					
+				{{ form_rest(form) }}
+				</form>	  
+			</div>				
+			<div class="col-xs-12 col-sm-2 col-md-6"></div>				 
+		</div>			
+	</div>	
+</section>	
+
+{% endblock fos_user_content %}
+{% endblock body %}
+{% block javascripts %}
+    {{ parent() }}
+
+   
+
+{% endblock javascripts %}

@@ -1,0 +1,148 @@
+admin_homepage:
+    path:     /
+    defaults: { _controller: LdAdminBundle:Default:index }
+
+admin_login:
+    pattern:  /login
+    defaults: { _controller: LdAdminBundle:Security:login }
+    
+admin_login_check:
+    pattern:  /login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+admin_logout:
+    pattern:  /logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+    
+ld_admin_dashboard:
+    pattern:  /dashboard
+    defaults: { _controller: LdAdminBundle:Dashboard:index }
+    
+ld_admin_user_list:
+    pattern:  /user/list
+    defaults: { _controller: LdAdminBundle:Admin:list }    
+
+ld_admin_user_list_json:
+    pattern:  /user/list_json
+    defaults: { _controller: LdAdminBundle:Admin:listJson }
+
+ld_admin_user_add:
+    pattern:  /user/add
+    defaults: { _controller: LdAdminBundle:Admin:add }
+        
+ld_admin_user_edit:
+    pattern:  /user/edit/{id}
+    defaults: { _controller: LdAdminBundle:Admin:edit,id:0  }
+    
+ld_admin_user_delete:
+    pattern:  /user/delete
+    defaults: { _controller: LdAdminBundle:Admin:delete }
+    
+ld_admin_user_activeInactive:
+    pattern:  /user/update/status
+    defaults: { _controller: LdAdminBundle:Admin:updateStatus }      
+    
+ld_admin_customer_list:
+    pattern:  /customer/list
+    defaults: { _controller: LdAdminBundle:Customer:list }    
+
+ld_admin_customer_list_json:
+    pattern:  /customer/list_json
+    defaults: { _controller: LdAdminBundle:Customer:listJson }
+
+ld_admin_customer_add:
+    pattern:  /customer/add
+    defaults: { _controller: LdAdminBundle:Customer:add }
+        
+ld_admin_customer_edit:
+    pattern:  /customer/edit/{id}
+    defaults: { _controller: LdAdminBundle:Customer:edit,id:0  }
+    
+ld_admin_customer_delete:
+    pattern:  /customer/delete
+    defaults: { _controller: LdAdminBundle:Customer:delete }
+    
+ld_admin_customer_activeInactive:
+    pattern:  /customer/update/status
+    defaults: { _controller: LdAdminBundle:Customer:updateStatus }  
+    
+ld_admin_group_list:
+    path:     /group/list
+    defaults: { _controller: LdAdminBundle:Group:list }
+    
+ld_admin_group_list_json:
+    pattern:  /group/list-json
+    defaults: { _controller: LdAdminBundle:Group:listJson }
+
+ld_admin_group_add:
+    path:     /group/add-group
+    defaults: { _controller: LdAdminBundle:Group:add }
+
+ld_admin_group_edit:
+    path:     /group/edit-group/{id}
+    defaults: { _controller: LdAdminBundle:Group:edit }
+
+ld_admin_group_delete:
+    path:     /group/delete-group
+    defaults: { _controller: LdAdminBundle:Group:delete }
+    
+ld_admin_group_permission:
+    path:     /group/permissions/{id}
+    defaults: { _controller: LdAdminBundle:Group:permission }
+    
+ld_admin_group_check:
+    path:     /group/check
+    defaults: { _controller: LdAdminBundle:Group:check } 
+    
+ld_admin_group_activeInactive:
+    pattern:  /group/update/status
+    defaults: { _controller: LdAdminBundle:Group:updateStatus }       
+
+ld_admin_permission_list:
+    path:     /permission/list
+    defaults: { _controller: LdAdminBundle:Permission:list }
+    
+ld_admin_permission_list_json:
+    pattern:  /permission/list-json
+    defaults: { _controller: LdAdminBundle:Permission:listJson }
+
+ld_admin_permission_add:
+    path:     /permission/add
+    defaults: { _controller: LdAdminBundle:Permission:add }
+
+ld_admin_permission_edit:
+    path:     /permission/edit/{id}
+    defaults: { _controller: LdAdminBundle:Permission:edit }
+
+ld_admin_permission_delete:
+    path:     /permission/delete
+    defaults: { _controller: LdAdminBundle:Permission:delete }    
+    
+ld_admin_permission_activeInactive:
+    pattern:  /permission/update/status
+    defaults: { _controller: LdAdminBundle:Permission:updateStatus }   
+    
+ld_admin_permission_category_list:
+    path:     /permission/category/list
+    defaults: { _controller: LdAdminBundle:PermissionCategory:list }
+    
+ld_admin_permission_category_list_json:
+    pattern:  /permission/category/list-json
+    defaults: { _controller: LdAdminBundle:PermissionCategory:listJson }
+
+ld_admin_permission_category_add:
+    path:     /permission/category/add
+    defaults: { _controller: LdAdminBundle:PermissionCategory:add }
+
+ld_admin_permission_category_edit:
+    path:     /permission/category/edit/{id}
+    defaults: { _controller: LdAdminBundle:PermissionCategory:edit }
+
+ld_admin_permission_category_delete:
+    path:     /permission/category/delete
+    defaults: { _controller: LdAdminBundle:PermissionCategory:delete}    
+    
+ld_admin_permission_category_activeInactive:
+    pattern:  /permission/category/update/status
+    defaults: { _controller: LdAdminBundle:PermissionCategory:updateStatus }                 
+    

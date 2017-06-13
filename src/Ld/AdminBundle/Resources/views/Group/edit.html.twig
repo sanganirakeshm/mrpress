@@ -1,0 +1,41 @@
+{% extends "LdAdminBundle::layout.html.twig" %}
+
+{% block body %}
+
+<div class="content-area p-y-1">
+	<div class="container-fluid">
+		<h4>Permission</h4>
+		<ol class="breadcrumb no-bg m-b-1">
+			<li class="breadcrumb-item"><a href="#">Group & Permission</a></li>
+			<li class="breadcrumb-item"><a href="#">Group</a></li>			
+			<li class="breadcrumb-item active">Edit</li>
+		</ol>
+		<div class="m-b-0-25" id="alermeg">
+			{% include "LdAdminBundle::flashMessage.html.twig" %}
+		</div>
+		<div class="box box-block bg-white">
+			<h5>Edit</h5>
+			
+			<form action="{{ path('ld_admin_group_edit',  { 'id': group.id }) }}" method="POST" {{ form_enctype(form) }} class="form-horizontal" id="edit_group_form">
+			{% include 'LdAdminBundle:Group:_group_form.html.twig' with {'form': form} %}
+			<div class="form-group row">
+				<div class="offset-sm-2 col-sm-7">
+					<input type="submit" name="add" value="Submit" class="btn btn-primary" />
+					<a href="{{ path('ld_admin_group_list') }}" class="btn btn-secondary">Back</a>
+				</div>
+			</div>
+			{{ form_rest(form) }}			
+            </form>
+		</div>
+
+	</div>
+</div>
+	
+{% endblock body %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/ldadmin/custom/js/validation.js') }}"></script>
+	<script type="text/javascript">
+    
+	</script>
+{% endblock javascripts %}

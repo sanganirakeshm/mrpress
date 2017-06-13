@@ -1,0 +1,21 @@
+<div class="form-group row">
+	<label class="col-xs-2 col-form-label">Name</label>
+	<div class="col-xs-6">
+		{{ form_widget(form.name, { 'attr': { 'placeholder': 'Name', 'class': 'form-control'}}) }}
+		<div class="serverError">{{ form_errors(form.name) }}</div>
+	</div>							
+</div>
+<div class="form-group row">
+	<label class="col-xs-2 col-form-label">Short Code</label>
+	<div class="col-xs-6">
+		{{ form_widget(form.code, { 'attr': { 'placeholder': 'Code', 'class': 'form-control'}}) }}
+		<div class="serverError">{{ form_errors(form.code) }}</div>
+	</div>							
+</div>									
+<div class="form-group row">
+	<label class="col-xs-2 col-form-label">Active</label>
+	<div class="col-xs-6">
+		{{ form_widget(form.status, { 'attr': { 'placeholder': 'Status', 'class': 'form-control'}}) }}
+	    <div class="serverError">{{ form_errors(form.status) }}</div>
+	</div>		
+</div>									
